@@ -9,7 +9,14 @@ import SwiftUI
 
 struct quizzesPage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack{
+                
+            }
+            .navigationTitle("Quiz")
+            .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.automatic/*@END_MENU_TOKEN@*/)
+        }
+       
     }
 }
 
