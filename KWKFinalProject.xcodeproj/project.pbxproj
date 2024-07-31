@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57218C492C5AB63E00009B46 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57218C482C5AB63E00009B46 /* Persistence.swift */; };
+		57218C4C2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57218C4A2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodeld */; };
 		5739B8552C540DAA007D7D75 /* KWKFinalProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739B8542C540DAA007D7D75 /* KWKFinalProjectApp.swift */; };
 		5739B8572C540DAA007D7D75 /* homeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739B8562C540DAA007D7D75 /* homeScreen.swift */; };
 		5739B8592C540DAC007D7D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739B8582C540DAC007D7D75 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57218C482C5AB63E00009B46 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		57218C4B2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KWKFinalProject.xcdatamodel; sourceTree = "<group>"; };
 		5739B8512C540DAA007D7D75 /* KWKFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWKFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5739B8542C540DAA007D7D75 /* KWKFinalProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWKFinalProjectApp.swift; sourceTree = "<group>"; };
 		5739B8562C540DAA007D7D75 /* homeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeScreen.swift; sourceTree = "<group>"; };
@@ -103,7 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				5739B8542C540DAA007D7D75 /* KWKFinalProjectApp.swift */,
+				57218C4A2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodeld */,
 				5739B8562C540DAA007D7D75 /* homeScreen.swift */,
+				57218C482C5AB63E00009B46 /* Persistence.swift */,
 				57500D0E2C593D6C00A485BD /* journalPage.swift */,
 				57500D102C593D7C00A485BD /* resourcesPage.swift */,
 				57500D122C593D8B00A485BD /* quizzesPage.swift */,
@@ -271,7 +277,9 @@
 			files = (
 				57500D132C593D8B00A485BD /* quizzesPage.swift in Sources */,
 				57500D0F2C593D6C00A485BD /* journalPage.swift in Sources */,
+				57218C4C2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodeld in Sources */,
 				5739B8572C540DAA007D7D75 /* homeScreen.swift in Sources */,
+				57218C492C5AB63E00009B46 /* Persistence.swift in Sources */,
 				57500D112C593D7C00A485BD /* resourcesPage.swift in Sources */,
 				5739B8552C540DAA007D7D75 /* KWKFinalProjectApp.swift in Sources */,
 				57500D152C593DD900A485BD /* networkPage.swift in Sources */,
@@ -604,6 +612,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		57218C4A2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				57218C4B2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodel */,
+			);
+			currentVersion = 57218C4B2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodel */;
+			name = KWKFinalProject.xcdatamodeld;
+			path = "/Users/binivazquez/Desktop/KWK /XCode/Final Project/KWKFinalProject/KWKFinalProject/KWKFinalProject.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5739B8492C540DAA007D7D75 /* Project object */;
 }
