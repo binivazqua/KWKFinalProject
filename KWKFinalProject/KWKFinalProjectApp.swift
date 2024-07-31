@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct KWKFinalProjectApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+          ContentView()
         }
     }
 }
