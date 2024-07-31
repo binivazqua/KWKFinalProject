@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    let bgColorIn = Color(red: 0.9686274509803922, green: 0.9294117647058824, blue: 0.8862745098039215)
-    let bgColorOut = Color(red: 0.5176470588235295, green: 0.6470588235294118, blue: 0.615686274509804)
+    let offWhite = Color(red: 0.9686274509803922, green: 0.9294117647058824, blue: 0.8862745098039215)
+    let blueGray = Color(red: 0.5176470588235295, green: 0.6470588235294118, blue: 0.615686274509804)
     let yellow2 = Color(red: 0.9647058823529412, green: 0.7411764705882353, blue: 0.3764705882352941)
     
     var body: some View {
         NavigationStack{
             ZStack{
-                bgColorOut.edgesIgnoringSafeArea(.all)
+                offWhite.edgesIgnoringSafeArea(.all)
+                    
                 VStack{
                     Spacer()
                         .frame(height: 50)
@@ -40,12 +41,14 @@ struct ContentView: View {
                             NavigationLink(destination: journalPage()){
                                 VStack{
                                     Image("booklet-line")
-                                    Text("Journal").foregroundColor(.white)
+                                    Text("Journal").foregroundColor(Color(hue: 0.066, saturation: 0.582, brightness: 0.207))
+                                        .font(.system(size: 17))
                                 }
                                 .frame(width: 80.0, height: 110.0)
                                 .padding()
                                 .background(yellow2.opacity(0.87))
                                 .cornerRadius(20)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
                             }
                             
                         }
@@ -59,12 +62,14 @@ struct ContentView: View {
                             NavigationLink(destination: quizzesPage()){
                                 VStack{
                                     Image("contract-line")
-                                    Text("Quiz").foregroundColor(.white)
+                                    Text("Quiz").foregroundColor(Color(hue: 0.066, saturation: 0.582, brightness: 0.207))
+                                        .font(.system(size: 17))
                                 }
                                 .frame(width: 80.0, height: 110.0)
                                 .padding()
                                 .background(yellow2.opacity(0.87))
                                 .cornerRadius(20)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
                             }
                             
                             
@@ -85,12 +90,14 @@ struct ContentView: View {
                             NavigationLink(destination: resourcesPage()){
                                 VStack{
                                     Image("resources")
-                                    Text("Resources").foregroundColor(.white)
+                                    Text("Resources").foregroundColor(Color(hue: 0.066, saturation: 0.582, brightness: 0.207))
+                                        .font(.system(size: 17))
                                 }
                                 .frame(width: 80.0, height: 110.0)
                                 .padding()
                                 .background(yellow2.opacity(0.87))
                                 .cornerRadius(20)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
                             }
                             
                         }
@@ -103,12 +110,14 @@ struct ContentView: View {
                             NavigationLink(destination: networkPage()){
                                 VStack{
                                     Image("network")
-                                    Text("Network").foregroundColor(.white)
+                                    Text("Network").foregroundColor(Color(hue: 0.066, saturation: 0.582, brightness: 0.207))
+                                        .font(.system(size: 17))
                                 }
                                 .frame(width: 80.0,height: 110.0)
                                 .padding()
                                 .background(yellow2.opacity(0.87))
                                 .cornerRadius(20)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
                                 
                             }
                         }
@@ -116,16 +125,11 @@ struct ContentView: View {
                     Spacer()
                         .frame(height: 40)
                     Text("Ikigai - the reason for being; the thing that gets you up in the morning.")
+                        .foregroundColor(.gray)
                         .italic()
                         .padding(.all, 15.0)
 
                 }
-                .padding()
-                .background(Rectangle()
-                .foregroundColor(bgColorIn.opacity(0.77))
-                .frame(width: 350, height: 690)
-                .cornerRadius(20))
-                .shadow(radius:15)
                 .padding()
             }
         }
