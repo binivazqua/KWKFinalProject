@@ -15,6 +15,7 @@ struct quizzesPage: View {
             }
             .navigationTitle("Quiz")
             .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.automatic/*@END_MENU_TOKEN@*/)
+            Link("hi", destination: URL(string: "https://www.hackingwithswift.com/quick-start/swiftui/how-to-open-web-links-in-safari")!)
         }
        
     }
