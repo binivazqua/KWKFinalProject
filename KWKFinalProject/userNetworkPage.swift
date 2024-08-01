@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct userNetworkPage: View {
-    
-   
+struct UserNetworkPage: View {
+    let yellow2 = Color(red: 0.9647058823529412, green: 0.7411764705882353, blue: 0.3764705882352941).opacity(0.8)
+    let lightPink = Color(red: 1, green: 0.9333333333333333, blue: 0.9215686274509803)
+    let buttonColor = Color(red: 1, green: 0.35294117647058826, blue: 0.4117647058823529)
     
     @State private var pronouns = ""
     @State private var age = ""
@@ -20,86 +21,88 @@ struct userNetworkPage: View {
     @State private var mission = ""
     @State private var vision = ""
     
-    /// ALERT IMPLEMENTATION:
-        @State private var infoSaved = false
+    @State private var infoSaved = false
     
     var body: some View {
-        NavigationStack{
-            VStack{
+        NavigationStack {
+            ZStack {
+                yellow2
+                    .edgesIgnoringSafeArea(.all)
                 
-                VStack(alignment: .center){
-                    // IMAGE
-                    Image("user-line")
-
+                VStack {
+                    VStack(alignment: .center) {
+                        Image("user-line")
+                        Text("Username")
+                            .font(.headline)
+                    }
+                    .padding(.vertical, 5)
                     
-                    // USERNAME
-                    Text("Username")
-                }.padding(.vertical, 5)
-                
-                ScrollView{
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 15) {
+                            Text("My interests...")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                            
+                            Group {
+                                Text("My pronouns are:")
+                                textField(text: $pronouns)
+                                
+                                Text("Age:")
+                                textField(text: $age)
+                                
+                                Text("Word that describes me:")
+                                textField(text: $descriptive_wrd)
+                                
+                                Text("I love to:")
+                                textField(text: $passions)
+                                
+                                Text("I am good at:")
+                                textField(text: $talents)
+                                
+                                Text("MBTI Personality Type:")
+                                textField(text: $mbti)
+                                
+                                Text("Mission:")
+                                textField(text: $mission)
+                                
+                                Text("Vision:")
+                                textField(text: $vision)
+                            }
+                            .padding(.leading, 20.0)
+                        }
+                        .padding(.top)
+                    }
                     
-                    VStack(alignment: .leading){
-                        // INTERESTS
-                        Text("My interests...").font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/).padding(.bottom)
-                        
-                        Text("My pronouns are:")
-                        TextField("Type...", text: $pronouns)
-                        
-                        Text("Age:")
-                        TextField("Type...", text: $age)
-                        
-                        Text("Word that describes me:")
-                        TextField("Type...", text: $descriptive_wrd)
-                        
-                        Text("I love to:")
-                        TextField("Type...", text: $passions)
-                        
-                        Text("I am good at:")
-                        TextField("Type...", text: $talents)
-                        
-                        Text("MBTI Personality Type:")
-                        TextField("Type...", text: $mbti)
-                        
-                        Text("Mission:")
-                        TextField("Type...", text: $mission)
-                        
-                        Text("Vision:")
-                        TextField("Type...", text: $vision)
-
-                        //Spacer()
-                            //.frame(width: 300.0)
-                        
-                        
-                    }.padding(.leading, 20.0)
-                    
+                    Button("Save info") {
+                        infoSaved = true
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(buttonColor)
                 }
-                
-                Button("Save info"){
-                    
-                    infoSaved = true
-                    
-                }.buttonStyle(.bordered)
-                    .tint(.green)
-                
-                
+                .padding(10)
+                .alert("✅", isPresented: $infoSaved) {
+                    Button("Continue") {}
+                } message: {
+                    Text("Info saved successfully!")
+                }
             }
-            
-            // ALERT CALL GOES HERE
-            .alert("✅", isPresented: $infoSaved, actions: {
-            // implement button here
-                Button("Continue"){}
-            },
-            // show up text
-                   message: {
-                Text("Info saved successfully!")
-        
-            })
-                    
-            
-        }.padding(10)
+        }
+    }
+    
+    // Text Field
+    private func textField(text: Binding<String>) -> some View {
+        TextField("Type...", text: text)
+            .padding()
+            .background(lightPink.opacity(0.8))
+            .cornerRadius(8)
+            .shadow(radius: 5)
+            .frame(maxWidth: 300)
+            .frame(height: 40)
     }
 }
 
 #Preview {
-    userNetworkPage()
+    UserNetworkPage()
 }
+
