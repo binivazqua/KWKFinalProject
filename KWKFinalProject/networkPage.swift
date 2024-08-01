@@ -9,7 +9,17 @@ import SwiftUI
 
 struct networkPage: View {
     var body: some View {
-        Text("network")
+        NavigationStack{
+            VStack{
+                Text("Data display")
+                // IMAGE
+                
+                
+                // USERNAME
+                
+                // INTERESTS
+            }
+        }
     }
 }
 
