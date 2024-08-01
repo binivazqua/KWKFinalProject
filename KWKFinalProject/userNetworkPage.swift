@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserNetworkPage: View {
     @ObservedObject var userProfile: UserProfile
+    @State private var navigateToProfile = false
     @State private var infoSaved = false
     
     var body: some View {
@@ -50,24 +51,23 @@ struct UserNetworkPage: View {
                 }
                 
                 Button("Save info") {
-                    infoSaved = true
+                        infoSaved = true
                 }
                 .buttonStyle(.bordered)
                 .tint(.green)
-                
-                NavigationLink(destination: NetworkPage(userProfile: userProfile)) {
-                    Text("GO")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                                
+            // NavigationLink outside the alert
+                NavigationLink(destination: NetworkPage(userProfile: userProfile), isActive: $navigateToProfile) {
+                     EmptyView()
                 }
-            }
-            .alert("✅", isPresented: $infoSaved, actions: {
-                Button("Continue") {}
-            }, message: {
-                Text("Info saved successfully!")
-            })
+               }
+               .alert("✅", isPresented: $infoSaved, actions: {
+                       Button("Go to profile") {
+                             navigateToProfile = true
+                       }
+                    }, message: {
+                        Text("Info saved successfully!")
+                    })
         }
         .padding(10)
     }
