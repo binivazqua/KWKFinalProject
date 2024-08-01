@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier=""/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Entity1" representedClassName="Entity1" syncable="YES" codeGenerationType="class"/>
+    <entity name="UserData" representedClassName="UserData" syncable="YES" codeGenerationType="class">
+        <attribute name="age" attributeType="String"/>
+        <attribute name="attribute" attributeType="String"/>
+        <attribute name="descriptive_word" attributeType="String"/>
+        <attribute name="mission" attributeType="String"/>
+        <attribute name="passions" attributeType="String"/>
+        <attribute name="pronouns" attributeType="String"/>
+        <attribute name="talents" attributeType="String"/>
+        <attribute name="vision" attributeType="String"/>
+    </entity>
+</model>
