@@ -6,29 +6,30 @@
 //
 
 import Foundation
+import Combine
 
-class userProfileData : Identifiable {
+class UserProfile: ObservableObject {
+    @Published var pronouns: String
+    @Published var age: String
+    @Published var descriptiveWord: String
+    @Published var passions: String
+    @Published var talents: String
+    @Published var mbti: String
+    @Published var mission: String
+    @Published var vision: String
     
-    var name : String
-    var age : Int
-    var pronouns : String
-    var descriptiveWord : String
-    var passions : String
-    var talents : String
-    var mbti : String
-    var vision : String
-    
-    init(name: String, age: Int, pronouns: String, descriptiveWord: String, passions: String, talents: String, mbti: String, vision: String) {
-        self.name = name
-        self.age = age
+    init(pronouns: String = "", age: String = "", descriptiveWord: String = "", passions: String = "", talents: String = "", mbti: String = "", mission: String = "", vision: String = "") {
         self.pronouns = pronouns
+        self.age = age
         self.descriptiveWord = descriptiveWord
         self.passions = passions
         self.talents = talents
         self.mbti = mbti
+        self.mission = mission
         self.vision = vision
     }
 }
+
 
 
 

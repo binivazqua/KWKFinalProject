@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var userProfile = UserProfile() // User profile object across all IKIGAI
+
     let offWhite = Color(red: 0.9686274509803922, green: 0.9294117647058824, blue: 0.8862745098039215)
     let blueGray = Color(red: 0.5176470588235295, green: 0.6470588235294118, blue: 0.615686274509804)
     let yellow2 = Color(red: 0.9647058823529412, green: 0.7411764705882353, blue: 0.3764705882352941)
@@ -107,7 +110,7 @@ struct ContentView: View {
                             // action
                         }label:{
                             
-                            NavigationLink(destination: UserNetworkPage()){
+                            NavigationLink(destination: UserNetworkPage(userProfile: userProfile)){
                                 VStack{
                                     Image("network")
                                     Text("Network").foregroundColor(Color(hue: 0.066, saturation: 0.582, brightness: 0.207))
