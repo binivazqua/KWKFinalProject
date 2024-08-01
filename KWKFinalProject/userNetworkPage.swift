@@ -116,23 +116,13 @@ struct UserNetworkPage: View {
                     }
                     
                     HStack(alignment: .center, spacing: 10.0) {
-                        Button("Edit", systemImage: "pencil") {
+                        Button("Save", systemImage: "pencil") {
                             infoSaved = true
                         }
                         .buttonStyle(.bordered)
                         .tint(buttonColor)
                         
-                        // NavigationLink outside the alert
-                        NavigationLink(destination: NetworkPage(userProfile: userProfile), isActive: $navigateToProfile) {
-                            EmptyView()
-                        }
-                        .alert("✅", isPresented: $infoSaved, actions: {
-                               Button("Go to profile") {
-                                     navigateToProfile = false
-                               }
-                            }, message: {
-                                Text("Info saved successfully!")
-                            })
+                        
                     
                         Button("View Profile", systemImage: "person.fill.viewfinder") {
                             navigateToProfile = true
@@ -140,6 +130,18 @@ struct UserNetworkPage: View {
                         .buttonStyle(.bordered)
                         .tint(buttonColor)
                         .padding(.leading, 20.0)
+                        
+                        // NavigationLink outside the alert
+                        NavigationLink(destination: NetworkPage(userProfile: userProfile), isActive: $navigateToProfile) {
+                            EmptyView()
+                        }
+                        .alert("✅", isPresented: $infoSaved, actions: {
+                               Button("Ok!") {
+                                     navigateToProfile = false
+                               }
+                            }, message: {
+                                Text("Info saved successfully!")
+                            })
                     }.padding()
                 }
                     
