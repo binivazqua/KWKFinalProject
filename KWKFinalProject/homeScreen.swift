@@ -107,7 +107,7 @@ struct ContentView: View {
                             // action
                         }label:{
                             
-                            NavigationLink(destination: networkPage()){
+                            NavigationLink(destination: UserNetworkPage()){
                                 VStack{
                                     Image("network")
                                     Text("Network").foregroundColor(Color(hue: 0.066, saturation: 0.582, brightness: 0.207))

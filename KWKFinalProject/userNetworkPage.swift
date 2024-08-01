@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct UserNetworkPage: View {
+    
+    
+    @Environment(\.managedObjectContext) var context
+    
+    
     let yellow2 = Color(red: 0.9647058823529412, green: 0.7411764705882353, blue: 0.3764705882352941).opacity(0.8)
     let lightPink = Color(red: 1, green: 0.9333333333333333, blue: 0.9215686274509803)
     let buttonColor = Color(red: 1, green: 0.35294117647058826, blue: 0.4117647058823529)
@@ -46,7 +51,13 @@ struct UserNetworkPage: View {
                             
                             Group {
                                 Text("My pronouns are:")
-                                textField(text: $pronouns)
+                                TextField("Type...", text: $pronouns)
+                                    .padding()
+                                    .background(lightPink.opacity(0.8))
+                                    .cornerRadius(8)
+                                    .shadow(radius: 5)
+                                    .frame(maxWidth: 300)
+                                    .frame(height: 40)
                                 
                                 Text("Age:")
                                 textField(text: $age)
@@ -76,9 +87,26 @@ struct UserNetworkPage: View {
                     
                     Button("Save info") {
                         infoSaved = true
+                        print($pronouns)
+                        
+                        self.addProfileData(
+                            prons: self.pronouns,
+                            age: self.age,
+                            descriptiveWrd: self.descriptive_wrd,
+                            passions: self.passions,
+                            talents: self.talents,
+                            mbti: self.mbti,
+                            mission: self.mission,
+                            vision: self.vision)
+                        
+                    
                     }
                     .buttonStyle(.bordered)
                     .tint(buttonColor)
+                    
+                    NavigationLink(destination: networkPage()){
+                        Text("Go to profile")
+                    }
                 }
                 .padding(10)
                 .alert("✅", isPresented: $infoSaved) {
@@ -99,6 +127,38 @@ struct UserNetworkPage: View {
             .shadow(radius: 5)
             .frame(maxWidth: 300)
             .frame(height: 40)
+    }
+    
+    private func addProfileData(
+        
+        prons: String,
+        age : String,
+        descriptiveWrd : String,
+        passions : String,
+        talents : String,
+        mbti : String,
+        mission : String,
+        vision: String
+        
+    ) {
+        let userProfileData = UserData(context: context)
+            
+        
+            
+        userProfileData.id = UUID()
+        userProfileData.age = age
+        userProfileData.descriptive_word = descriptiveWrd
+        userProfileData.mission = mission
+        userProfileData.passions = passions
+        userProfileData.talents = talents
+        userProfileData.vision = vision
+        
+                    
+        do {
+                try context.save()
+            } catch {
+                        print(error)
+            }
     }
 }
 
