@@ -69,7 +69,7 @@ struct quizzesPage: View {
                             // +++++ VSTACK ++++++ //
                             VStack(alignment: .center) {
                                 
-                                Image("mbti_square")
+                                Image("strwks")
                                 
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -79,18 +79,18 @@ struct quizzesPage: View {
                                 
                                 VStack(alignment: .leading){
                                     HStack {
-                                        Text("MBTI Personality")
+                                        Text("My strenghts")
                                         Image(systemName: "heart")
                                     }
                                     
                                     
-                                    Text("Be yourself and answer honestly.")
+                                    Text("Find them and learn to grow them.")
                                         .font(.caption)
                                 }.padding(.horizontal, 10)
                                 
                                 
                                 
-                                Link("Take Quiz", destination: URL(string: "https://www.16personalities.com/free-personality-test")!)
+                                Link("Take Quiz", destination: URL(string: "https://www.buzzfeed.com/angelicaamartinez/strength-weakness-quiz")!)
                                     .frame(width: 100.0, height: 20.0)
                                     .padding(10.0)
                                     .font(.subheadline).foregroundColor(.black)
@@ -108,7 +108,7 @@ struct quizzesPage: View {
                             // +++++ VSTACK ++++++ //
                             VStack(alignment: .center) {
                                 
-                                Image("mbti_square")
+                                Image("career")
                                 
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -118,18 +118,18 @@ struct quizzesPage: View {
                                 
                                 VStack(alignment: .leading){
                                     HStack {
-                                        Text("MBTI Personality")
+                                        Text("My career path")
                                         Image(systemName: "heart")
                                     }
                                     
                                     
-                                    Text("Be yourself and answer honestly.")
+                                    Text("Get to know all the options for you.")
                                         .font(.caption)
                                 }.padding(.horizontal, 10)
                                 
                                 
                                 
-                                Link("Take Quiz", destination: URL(string: "https://www.16personalities.com/free-personality-test")!)
+                                Link("Take Quiz", destination: URL(string: "https://www.princetonreview.com/quiz/career-quiz")!)
                                     .frame(width: 100.0, height: 20.0)
                                     .padding(10.0)
                                     .font(.subheadline).foregroundColor(.black)
@@ -147,7 +147,7 @@ struct quizzesPage: View {
                             // +++++ VSTACK ++++++ //
                             VStack(alignment: .center) {
                                 
-                                Image("mbti_square")
+                                Image("passions")
                                 
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -157,18 +157,18 @@ struct quizzesPage: View {
                                 
                                 VStack(alignment: .leading){
                                     HStack {
-                                        Text("MBTI Personality")
+                                        Text("My passions...")
                                         Image(systemName: "heart")
                                     }
                                     
                                     
-                                    Text("Be yourself and answer honestly.")
+                                    Text("Do you know them all? Find out.")
                                         .font(.caption)
                                 }.padding(.horizontal, 10)
                                 
                                 
                                 
-                                Link("Take Quiz", destination: URL(string: "https://www.16personalities.com/free-personality-test")!)
+                                Link("Take Quiz", destination: URL(string: "https://ikigaitribe.com/ikigai/the-ikigai-questionnaire/")!)
                                     .frame(width: 100.0, height: 20.0)
                                     .padding(10.0)
                                     .font(.subheadline).foregroundColor(.black)
