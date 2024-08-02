@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct NetworkPage: View {
+    
+    @Binding var contacts: [Contact]
+    
     @ObservedObject var userProfile: UserProfile
+    
+    @State private var goToAddContact = false
     
     // COLORS:
     
@@ -25,9 +30,9 @@ struct NetworkPage: View {
             VStack(alignment: .center) {
                 
                 VStack(alignment: .center) {
-                    Image("user-line")
+                    Image("user-line").padding(.top, 10)
                     Text("Username")
-                }.padding(.vertical, 10)
+                }.padding(.vertical, 5)
                 
                 ScrollView{
                     LazyVGrid(columns: [GridItem(.flexible(minimum: 150, maximum: 200)), GridItem(.flexible(minimum: 150, maximum: 200))]){
@@ -38,9 +43,9 @@ struct NetworkPage: View {
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(.top,5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(.top,5)
                         
                         VStack{
                             Text("Age:").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -48,9 +53,9 @@ struct NetworkPage: View {
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(.top,5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(.top,5)
                         
                         VStack{
                             Text("I am...").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -59,18 +64,18 @@ struct NetworkPage: View {
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(5)
                         VStack{
                             Text("I love to...").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             Text(userProfile.passions)
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(.top, 5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(.top, 5)
                         
                         VStack{
                             Text("I am good at...").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -78,93 +83,96 @@ struct NetworkPage: View {
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(5)
                         VStack{
                             Text("My MBTI:").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             Text(userProfile.mbti)
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(.top, 5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(.top, 5)
                         VStack{
                             Text("Mission:").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             Text(userProfile.mission)
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(.top, 5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(.top, 5)
                         VStack{
                             Text("Vision:").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             Text(userProfile.vision)
                         }
                         .frame(width: 160.0, height: 100.0)
                         .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
-                            .cornerRadius(20)
-                            .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            .padding(.top, 5)
+                        .cornerRadius(20)
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .padding(.top, 5)
                         
                     }
                 }.padding()
             }.frame(width: 400, height: 390)
             
-            ScrollView{
-                // ADD CONTACT CONTAINER:
-                VStack(alignment: .leading){
-                    // ADD CONTACT CONTAINER:
-                    Text("My network").font(.title3).padding(.leading, 25.0)
-                    
-                    HStack(alignment: .top){
-                        Image("user-line").padding()
+            ScrollView {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("My network").font(.title3)
+                        Spacer().frame(width: 95)
                         
-                        VStack{
-                            HStack{
-                                VStack{}
-                                Text("Username")
-                                Text("pronouns").font(/*@START_MENU_TOKEN@*/.footnote/*@END_MENU_TOKEN@*/).fontWeight(.light)
-                                Text("age").font(/*@START_MENU_TOKEN@*/.footnote/*@END_MENU_TOKEN@*/).fontWeight(.light)
-                                Text("MBTI").font(/*@START_MENU_TOKEN@*/.footnote/*@END_MENU_TOKEN@*/).fontWeight(.bold).padding(.leading, 20)
-                                
-                                Spacer()
-
-                            }.padding(.vertical)
-                            VStack(alignment: .leading){
-                                Text("Passions:")
-                                Text("Talents:")
-                                
-                                Spacer().frame(width: 260)
-                                    
-                            }
-                            
-                            
-                           
+                        Button(action: {
+                            goToAddContact = true
+                        }) {
+                            Label("Add contact", systemImage: "person.crop.circle.badge.plus")
+                        }.frame(width: 150.0)
+                        .buttonStyle(.bordered)
+                        .tint(.green)
+                        
+                        NavigationLink(destination: addContactPage(userProfile: UserProfile(),contacts: $contacts), isActive: $goToAddContact) {
+                            EmptyView()
                         }
                     }
-                    .frame(height: 150.0)
-                    .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                    
+                    ForEach(contacts) { contact in
+                        HStack(alignment: .top) {
+                            Image("user-line").padding()
+                            
+                            VStack(alignment: .leading) {
+                                Text("Username: \(contact.name)")
+                                
+                                                                Text("Description: \(contact.descriptiveWord)")
+                                                                Text("Instagram: \(contact.igAccount)")
+                                                                Text("Place: \(contact.place)")
+                                
+                            }
+                        }
+                        .frame(height: 150.0)
+                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.horizontal, 20)
+                    }
+                    
+                    
+                    
+                }
+                
             }
             
-                
-                
-                
-                
-            }
-                
         }
         
-    }
-}
-
-#Preview {
-    NetworkPage(userProfile: UserProfile())
-}
-
+    }}
+        #Preview {
+            NetworkPage(
+                contacts: .constant([]),
+                userProfile: UserProfile()
+            )
+        }
+        
+        
+    
 

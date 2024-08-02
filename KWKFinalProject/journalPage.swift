@@ -39,15 +39,14 @@ struct journalPage: View {
                             }
                             
                             Text("How are you feeling today? Jot down any thoughts 😌")
-                                .font(.system(size: 21))
-                                .fontWeight(.bold)
+                                
                                 .multilineTextAlignment(.center)
                                 .lineLimit(nil)
                             
                             ZStack(alignment: .topLeading) {
                                     TextEditor(text: $journalText)
-                                        .frame(height: 150)
-                                        .padding(.all, 15.0)
+                                    .frame(width: 300.0, height: 150)
+                                        .padding()
                                         .scrollContentBackground(.hidden)
                                         .background(lightPink)
                                         .cornerRadius(10)
@@ -60,8 +59,7 @@ struct journalPage: View {
                                     Text("Start writing here ...")
                                         .font(.system(size: 21))
                                         .foregroundColor(.gray)
-                                        .padding(.leading, 25)
-                                        .padding(.top, 25)
+                                        .padding()
                                         .allowsHitTesting(false)
                                 }
                             }
@@ -109,10 +107,10 @@ struct journalPage: View {
                                         }
                                     }
                                 }
-                                .padding(.top, 10)
+                                .padding()
                             }
                         }
-                    }
+                    }.padding()
                     .frame(maxHeight: .infinity)
                 }
                 .padding()

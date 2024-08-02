@@ -24,6 +24,8 @@ struct UserNetworkPage: View {
     @State private var navigateToProfile = false
     @State private var infoSaved = false
     
+    @Binding var contacts: [Contact]
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -132,7 +134,7 @@ struct UserNetworkPage: View {
                         .padding(.leading, 20.0)
                         
                         // NavigationLink outside the alert
-                        NavigationLink(destination: NetworkPage(userProfile: userProfile), isActive: $navigateToProfile) {
+                        NavigationLink(destination: NetworkPage(contacts: $contacts, userProfile: userProfile), isActive: $navigateToProfile) {
                             EmptyView()
                         }
                         .alert("✅", isPresented: $infoSaved, actions: {
@@ -155,6 +157,6 @@ struct UserNetworkPage: View {
 }
 
 #Preview {
-    UserNetworkPage(userProfile: UserProfile())
+    UserNetworkPage(userProfile: UserProfile(),contacts: .constant([]))
 }
 

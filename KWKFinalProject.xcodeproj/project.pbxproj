@@ -22,6 +22,8 @@
 		57500D152C593DD900A485BD /* networkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57500D142C593DD900A485BD /* networkPage.swift */; };
 		576866772C5B4AC5002E8C6B /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576866762C5B4AC5002E8C6B /* userData.swift */; };
 		576866792C5B4D73002E8C6B /* userNetworkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576866782C5B4D73002E8C6B /* userNetworkPage.swift */; };
+		576A9A3A2C5C943400E1E4B5 /* contactDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A9A392C5C943400E1E4B5 /* contactDataClass.swift */; };
+		576A9A3C2C5C971E00E1E4B5 /* addContactPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A9A3B2C5C971E00E1E4B5 /* addContactPage.swift */; };
 		57F00BB32C5BE7750081B14A /* userDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F00BB22C5BE7750081B14A /* userDataClass.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		57500D142C593DD900A485BD /* networkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkPage.swift; sourceTree = "<group>"; };
 		576866762C5B4AC5002E8C6B /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
 		576866782C5B4D73002E8C6B /* userNetworkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userNetworkPage.swift; sourceTree = "<group>"; };
+		576A9A392C5C943400E1E4B5 /* contactDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactDataClass.swift; sourceTree = "<group>"; };
+		576A9A3B2C5C971E00E1E4B5 /* addContactPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addContactPage.swift; sourceTree = "<group>"; };
 		57F00BB22C5BE7750081B14A /* userDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,8 @@
 				57500D102C593D7C00A485BD /* resourcesPage.swift */,
 				57500D122C593D8B00A485BD /* quizzesPage.swift */,
 				57500D142C593DD900A485BD /* networkPage.swift */,
+				576A9A3B2C5C971E00E1E4B5 /* addContactPage.swift */,
+				576A9A392C5C943400E1E4B5 /* contactDataClass.swift */,
 				57F00BB22C5BE7750081B14A /* userDataClass.swift */,
 				576866782C5B4D73002E8C6B /* userNetworkPage.swift */,
 				5739B8582C540DAC007D7D75 /* Assets.xcassets */,
@@ -285,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57500D132C593D8B00A485BD /* quizzesPage.swift in Sources */,
+				576A9A3A2C5C943400E1E4B5 /* contactDataClass.swift in Sources */,
 				57500D0F2C593D6C00A485BD /* journalPage.swift in Sources */,
 				576866792C5B4D73002E8C6B /* userNetworkPage.swift in Sources */,
 				57218C4C2C5AB6DA00009B46 /* KWKFinalProject.xcdatamodeld in Sources */,
@@ -292,6 +299,7 @@
 				57218C492C5AB63E00009B46 /* Persistence.swift in Sources */,
 				57500D112C593D7C00A485BD /* resourcesPage.swift in Sources */,
 				57F00BB32C5BE7750081B14A /* userDataClass.swift in Sources */,
+				576A9A3C2C5C971E00E1E4B5 /* addContactPage.swift in Sources */,
 				576866772C5B4AC5002E8C6B /* userData.swift in Sources */,
 				5739B8552C540DAA007D7D75 /* KWKFinalProjectApp.swift in Sources */,
 				57500D152C593DD900A485BD /* networkPage.swift in Sources */,
