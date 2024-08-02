@@ -183,6 +183,7 @@ struct resourcesPage: View {
                                 .frame(width: buttonWidth, height: buttonHeight)
                                 .background(coral)
                                 .cornerRadius(10)
+                                .shadow(radius: 5)
                         }
                         DisclosureGroup(isExpanded: $isExpanded2) {
                             ForEach(filteredVideos) { video in
@@ -219,6 +220,7 @@ struct resourcesPage: View {
                                 .frame(width: buttonWidth, height: buttonHeight)
                                 .background(lightPink)
                                 .cornerRadius(10)
+                                .shadow(radius: 5)
                         }
                         DisclosureGroup(isExpanded: $isExpanded3) {
                             ForEach(filteredCamps) { camp in
@@ -255,6 +257,7 @@ struct resourcesPage: View {
                                 .frame(width: buttonWidth, height: buttonHeight)
                                 .background(yellow)
                                 .cornerRadius(10)
+                                .shadow(radius: 5)
                         }
                         DisclosureGroup(isExpanded: $isExpanded4) {
                             ForEach(filteredOpportunities) { opportunity in
@@ -291,6 +294,7 @@ struct resourcesPage: View {
                                 .frame(width: buttonWidth, height: buttonHeight)
                                 .background(darkTeal)
                                 .cornerRadius(10)
+                                .shadow(radius: 5)
                         }
                         DisclosureGroup(isExpanded: $isExpanded5) {
                             ForEach(savedResources) { savedResource in
@@ -323,6 +327,7 @@ struct resourcesPage: View {
                                 .frame(width: buttonWidth, height: buttonHeight)
                                 .background(darkerTeal)
                                 .cornerRadius(10)
+                                .shadow(radius: 5)
                         }
                     }
                     .frame(width: containerWidth)
@@ -362,6 +367,7 @@ struct CustomPicker: View {
             .background(backgroundColor)
             .cornerRadius(10)
             .shadow(radius: 2)
+            
         }
     }
 }

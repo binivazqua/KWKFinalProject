@@ -29,7 +29,7 @@ struct UserNetworkPage: View {
     var body: some View {
         NavigationStack {
             ZStack{
-                lightPink
+                offWhite
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack {

@@ -23,10 +23,14 @@ struct NetworkPage: View {
     let yellow2 = Color(red: 0.9647058823529412, green: 0.7411764705882353, blue: 0.3764705882352941)
     let blueGray = Color(red: 0.5176470588235295, green: 0.6470588235294118, blue: 0.615686274509804)
     let pastelGreen = Color(red: 0.7098039215686275, green: 0.8235294117647058, blue: 0.5450980392156862)
+    let darkTeal = Color(red: 0.52, green: 0.65, blue: 0.62)
+
     
     var body: some View {
         
         NavigationStack{
+            
+            
             VStack(alignment: .center) {
                 
                 VStack(alignment: .center) {
@@ -42,7 +46,7 @@ struct NetworkPage: View {
                             Text(userProfile.pronouns)
                         }
                         .frame(width: 160.0, height: 100.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .background(Rectangle().foregroundColor(darkTeal).opacity(0.8))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.top,5)
@@ -52,7 +56,7 @@ struct NetworkPage: View {
                             Text(userProfile.age)
                         }
                         .frame(width: 160.0, height: 100.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .background(Rectangle().foregroundColor(coral).opacity(0.5))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.top,5)
@@ -63,7 +67,7 @@ struct NetworkPage: View {
                             
                         }
                         .frame(width: 160.0, height: 100.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .background(Rectangle().foregroundColor(yellow2).opacity(0.5))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(5)
@@ -82,7 +86,7 @@ struct NetworkPage: View {
                             Text(userProfile.talents)
                         }
                         .frame(width: 160.0, height: 100.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .background(Rectangle().foregroundColor(coral).opacity(0.5))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(5)
@@ -91,7 +95,7 @@ struct NetworkPage: View {
                             Text(userProfile.mbti)
                         }
                         .frame(width: 160.0, height: 100.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .background(Rectangle().foregroundColor(darkTeal).opacity(0.5))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.top, 5)
@@ -100,7 +104,7 @@ struct NetworkPage: View {
                             Text(userProfile.mission)
                         }
                         .frame(width: 160.0, height: 100.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .background(Rectangle().foregroundColor(yellow2).opacity(0.5))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.top, 5)
@@ -122,7 +126,7 @@ struct NetworkPage: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("My network").font(.title3)
-                        Spacer().frame(width: 95)
+                        Spacer().frame(width: 85)
                         
                         Button(action: {
                             goToAddContact = true
@@ -144,14 +148,16 @@ struct NetworkPage: View {
                             VStack(alignment: .leading) {
                                 Text("Username: \(contact.name)")
                                 
-                                                                Text("Description: \(contact.descriptiveWord)")
-                                                                Text("Instagram: \(contact.igAccount)")
-                                                                Text("Place: \(contact.place)")
+                                Text("Description: \(contact.descriptiveWord)")
+                                
+                                Text("Instagram: \(contact.igAccount)")
+                                
+                                Text("Place: \(contact.place)")
                                 
                             }
                         }
-                        .frame(height: 150.0)
-                        .background(Rectangle().foregroundColor(pastelGreen).opacity(0.8))
+                        .frame(width: 300,height: 150.0)
+                        .background(Rectangle().foregroundColor(coral).opacity(0.8))
                         .cornerRadius(20)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.horizontal, 20)
